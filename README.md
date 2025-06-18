@@ -75,7 +75,7 @@ The model works well for price estimation but can be improved using ensemble met
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/car-price-prediction.git
+git clone (https://github.com/naveenk-DS/Car_Price_prediction)
 cd car-price-prediction
 pip install -r requirements.txt
 # 💡 Future Improvements
