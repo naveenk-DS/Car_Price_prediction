@@ -53,7 +53,7 @@ The dataset used is `car_data.csv`, which contains the following columns:
 
 ## 🧪 Model Building
 
-```python
+### python
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
@@ -64,41 +64,39 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model.fit(X_train, y_train)
 pred = model.predict(X_test)
 r2_score(y_test, pred)
-✅ Results
+
+
+# ✅ Results
 R² Score: ~0.85
 
 The model works well for price estimation but can be improved using ensemble methods.
 
-📦 Installation
+# 📦 Installation
 bash
 Copy
 Edit
 git clone https://github.com/yourusername/car-price-prediction.git
 cd car-price-prediction
 pip install -r requirements.txt
-💡 Future Improvements
+# 💡 Future Improvements
 Add more models (Random Forest, XGBoost).
 
 Deploy using Flask or Streamlit.
 
 Use a larger dataset for better accuracy.
 
-🤝 Contributing
+# 🤝 Contributing
 Feel free to fork this repo, improve the model or add a UI, and submit a pull request!
 
-📧 Contact
+# 📧 Contact
 Created by Naveen
-📧 Email: your-email@example.com
-
-yaml
-Copy
-Edit
+📧 Email: naveends6k@gmail.com
 
 ---
 
 ### ✅ Sample `requirements.txt`
 
-```txt
+### txt
 numpy
 pandas
 scikit-learn
