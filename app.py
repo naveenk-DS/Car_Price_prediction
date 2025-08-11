@@ -44,7 +44,7 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-    prediction = model.predict(input_data)[0]
+    prediction = MODEL_PATH.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
