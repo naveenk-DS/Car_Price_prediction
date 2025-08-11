@@ -43,7 +43,15 @@ if st.button("Predict Price"):
         "Fuel_Type_numeric": Fuel_Type_numeric,
         "Transmission_numeric": Transmission_numeric
     }])
+# Path to your model file
+MODEL_PATH = "model.pkl"
 
+# Load the model
+if os.path.exists(MODEL_PATH):
+    with open(MODEL_PATH, "rb") as f:
+        model = pickle.load(f)
+else:
+    raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
     prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
