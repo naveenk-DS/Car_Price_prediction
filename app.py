@@ -4,9 +4,9 @@ import pickle
 import os
 
 # Load trained model
-MODEL_PATH = os.path.join(os.path.dirname(r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"))
-with open("model.pkl", "wb") as f:
-    pickle.dump(MODEL_PATH, f)
+output_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
+with open(output_path, "wb") as f:
+    pickle.dump(model, f)
 
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
@@ -44,7 +44,7 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-    prediction = MODEL_PATH.predict(input_data)[0]
+    prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
