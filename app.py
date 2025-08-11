@@ -6,7 +6,7 @@ import os
 # Load trained model
 output_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
 with open(output_path, "wb") as f:
-    pickle.dump(model, f)
+    pickle.dump(output_path, f)
 
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
