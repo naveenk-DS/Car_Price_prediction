@@ -52,8 +52,8 @@ if os.path.exists(MODEL_PATH):
         model = pickle.load(f)
 else:
     raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
-    prediction = model.predict(input_data)[0]
-    st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
+prediction = model.predict(input_data)[0]
+st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
 st.caption("Developed by Naveen 🚀")
