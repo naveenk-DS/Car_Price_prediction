@@ -4,10 +4,14 @@ import pickle
 import os
 
 # Load trained model
-output_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
-with open(output_path, "wb") as f:
-    pickle.dump(output_path, f)
+MODEL_PATH = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
 
+if os.path.exists(MODEL_PATH):
+    with open(MODEL_PATH, "rb") as f:
+        model = pickle.load(f)
+else:
+    st.error(f"Model file not found at: {MODEL_PATH}")
+    st.stop()
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
@@ -44,8 +48,9 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-prediction = model.predict(input_data)[0]
-st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
+    # Prediction
+    prediction = model.predict(input_data)[0]
+    st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
 st.caption("Developed by Naveen 🚀")
