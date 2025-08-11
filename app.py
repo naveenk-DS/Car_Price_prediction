@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import os
 
 # Load trained model
 MODEL_PATH = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
