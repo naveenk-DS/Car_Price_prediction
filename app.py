@@ -3,13 +3,10 @@ import pandas as pd
 import pickle
 import os
 
-
-output_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
-
-# ✅ Load trained model correctly
-with open(output_path, "rb") as f:
+# Load trained model
+MODEL_PATH = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
+with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
-
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
@@ -46,7 +43,6 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-    # Prediction
     prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
