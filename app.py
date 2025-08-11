@@ -3,15 +3,13 @@ import pandas as pd
 import pickle
 import os
 
-# Load trained model
-MODEL_PATH = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
 
-if os.path.exists(MODEL_PATH):
-    with open(MODEL_PATH, "rb") as f:
-        model = pickle.load(f)
-else:
-    st.error(f"Model file not found at: {MODEL_PATH}")
-    st.stop()
+output_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
+
+# ✅ Load trained model correctly
+with open(output_path, "rb") as f:
+    model = pickle.load(f)
+
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
