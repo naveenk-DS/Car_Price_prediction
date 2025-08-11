@@ -5,7 +5,7 @@ import os
 
 # Load trained model
 MODEL_PATH = os.path.join(os.path.dirname(r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"))
-with open(MODEL_PATH, "rb") as f:
+with open('model.pkl', "rb") as f:
     model = pickle.load(f)
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
