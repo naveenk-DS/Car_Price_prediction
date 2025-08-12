@@ -45,7 +45,6 @@ if st.button("Predict Price"):
         "Fuel_Type_numeric": Fuel_Type_numeric,
         "Transmission_numeric": Transmission_numeric
     }])
-    df.model.predict()
     prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
