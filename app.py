@@ -45,10 +45,8 @@ if st.button("Predict Price"):
         "Fuel_Type_numeric": Fuel_Type_numeric,
         "Transmission_numeric": Transmission_numeric
     }])
-    import numpy as np
-    user_data = np.array([[120000,3,23,998,67,90,5,9,0,0,0]])
-    y_p = model.predict(user_data)
-    print(y_p[0])
+    
+    prediction = model.predict(user_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
