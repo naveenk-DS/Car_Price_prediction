@@ -1,12 +1,15 @@
+from pyexpat import model
 import streamlit as st
 import pandas as pd
 import pickle
-import os
 
 # Load trained model
-MODEL_PATH = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
-with open(MODEL_PATH, "rb") as f:
-    model = pickle.load(f)
+model_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
+with open(model_path, "rb") as f:
+    Hyper_model = pickle.load(f)  # ✅ Correct
+
+
+
 
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
@@ -43,7 +46,7 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-    prediction = model.predict(input_data)[0]
+    prediction = Hyper_model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
