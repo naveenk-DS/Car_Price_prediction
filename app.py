@@ -45,7 +45,8 @@ if st.button("Predict Price"):
         "Fuel_Type_numeric": Fuel_Type_numeric,
         "Transmission_numeric": Transmission_numeric
     }])
-
+    import numpy as np
+    input_data = np.array([[feature1, feature2, feature3, ...]])
     prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
