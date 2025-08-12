@@ -46,7 +46,7 @@ if st.button("Predict Price"):
         "Transmission_numeric": Transmission_numeric
     }])
 
-    prediction = Hyper_model.predict(input_data)[0]
+    prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
 
 st.markdown("---")
