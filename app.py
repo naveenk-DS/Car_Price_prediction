@@ -54,11 +54,13 @@ if st.button("Predict Price"):
         "Fuel_Type_numeric",
         "Transmission_numeric"
     ])
-          # Make prediction
-    prediction = model.predict(input_data)[0]
-    st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
-except Exception as e:
-    st.error(f"❌ Prediction failed: {str(e)}")
+   # Make prediction
+        prediction = model.predict(input_data)[0]
+        st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
+
+    except Exception as e:
+        st.error(f"❌ Prediction failed: {str(e)}")
+
 
 st.markdown("---")
 st.caption("Developed by Naveen 🚀")
