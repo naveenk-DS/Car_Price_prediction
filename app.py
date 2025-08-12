@@ -5,8 +5,8 @@ import pickle
 
 # Load trained model
 model_path = r"E:\Car_Price_Prediction\Car_Price_prediction\model.pkl"
-with open(model_path, "rb") as f:
-    Hyper_model = pickle.load(f)  # ✅ Correct
+with open("Hyper_model.pkl", "rb") as f:
+    Hyper_model = pickle.load(f) # ✅ Correct
 
 
 
